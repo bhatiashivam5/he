@@ -1,38 +1,175 @@
-.App {
+.main-container {
+  width: 90% !important;
+  margin: 0 auto !important;
+}
+
+.card-body {
+  height: 100% !important;
+  position: relative !important;
+  border-radius: 20px !important;
+  padding: 5px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  background-color: rgb(255, 255, 255);
+  color: rgba(0, 0, 0, 0.87);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 4px;
+  overflow: hidden;
+  max-width: 360px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 4px 0px !important;
+  align-items: center;
+}
+
+.card-body:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.01);
+}
+
+.posted-container {
+  display: flex;
+  width: 100%;
+  padding: 5px 0px;
+}
+.posted-btn {
+  padding: 4px 6px;
+  box-shadow: rgba(6, 6, 6, 0.05) 0px 2px 6px 0px;
+  border-radius: 10px;
+  border: 1px solid rgb(230, 230, 230);
+}
+
+.posted-btn span {
+  font-size: 10px;
+}
+
+.company-details {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.company-name {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  margin-bottom: 3px !important;
+  color: #8b8b8b !important;
+}
+
+.position {
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  font-weight: 400 !important;
+  text-transform: capitalize;
+}
+.exp {
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  margin-top: 5px !important;
+  text-transform: capitalize;
+}
+
+.card-body img {
+  width: 25px;
+  height: 40px;
+}
+
+.card-salary {
+  font-size: 14px !important;
+  font-weight: 400;
+  margin: 8px 0 !important;
+}
+
+.desc-box {
+  height: 260px;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.about-company {
+  margin: 0px;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 500 !important;
+}
+
+.about-us {
+  font-size: 14px !important;
+}
+
+.view-btn {
   text-align: center;
+  margin-bottom: 0.5rem;
+  position: relative;
+  top: -20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.view-job-link {
+  color: #4943da;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+.poc-info-container {
+  margin-top: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.skills-heading {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px;
+  margin: 10px 0 3px 0;
+  color: #8b8b8b;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.skills-exp {
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+.skills-badge {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  padding-right: 15px;
+  height: 2rem;
+}
+
+.skills-set {
+  font-size: 9px !important;
+  max-height: 1rem !important;
+  font-weight: 500 !important;
+  color: #4943da;
+  background-color: #d9fed3;
+  padding: 2px 7px;
+  border-radius: 50px;
+  margin: 2px 5px 2px 0px !important;
+}
+
+.status-container {
+  flex-grow: 1;
+  width: 100%;
+  padding: 0 15px !important;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.inner-status-container {
+  justify-content: space-between;
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.apply-btn {
+  width: 90% !important;
+  margin: 0 auto !important;
+  background-color: rgb(85, 239, 196) !important;
+  color: rgb(0, 0, 0) !important;
+  font-weight: 500 !important;
+  padding: 8px 18px !important;
 }
