@@ -19,7 +19,6 @@ const JobDetails = () => {
     const [employeesNo, setEmployeesNo] = useState("")
     const [exp, setExp] = useState("")
     const [companyName, setCompanyName] = useState('')
-    console.log(sampleJdData);
 
     const isLoading = useAppSelector(
         (state: RootState) => state?.jobDetails?.loading
@@ -56,6 +55,7 @@ const JobDetails = () => {
         };
     }, [sampleJdData?.jdList.length]);
 
+    //Functions to handle dropdown and input field
     const handleOfficeType = (selectedOption: any) => {
         const value = selectedOption?.map((item: { value: string }) => (item?.value))
         setOfficeType(value)
@@ -83,6 +83,8 @@ const JobDetails = () => {
             setMinBasePay(selectedOption.value);
         }
     };
+
+    //Filters based on Exp and the company name
 
     const filterJd =
         companyName && exp ?
