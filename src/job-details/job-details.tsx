@@ -57,12 +57,10 @@ const JobDetails = () => {
     }, [sampleJdData?.jdList.length]);
 
     const handleOfficeType = (selectedOption: any) => {
-        console.log(selectedOption);
         const value = selectedOption?.map((item: { value: string }) => (item?.value))
         setOfficeType(value)
     };
     const handleRoles = (selectedOption: any) => {
-        console.log(selectedOption);
         const value = selectedOption?.map((item: { value: string }) => (item?.value))
         setRolesSelection(value)
     };
@@ -86,9 +84,20 @@ const JobDetails = () => {
         }
     };
 
-
-
-    console.log(officeType, employeesNo, minBasePay, exp, companyName);
+    const filterJd =
+        companyName && exp ?
+            sampleJdData?.jdList?.filter((item: { companyName: string; minExp: string; }) => {
+                return item?.companyName.toLowerCase().includes(companyName.toLowerCase()) && item?.minExp === exp;
+            }) :
+            companyName ?
+                sampleJdData?.jdList?.filter((item: { companyName: string; }) => {
+                    return companyName.toLowerCase() === '' ? item?.companyName : item?.companyName.toLowerCase().includes(companyName);
+                }) :
+                exp ?
+                    sampleJdData?.jdList?.filter((item: { minExp: string; }) => {
+                        return item?.minExp === exp;
+                    }) :
+                    sampleJdData?.jdList;
 
 
 
@@ -152,7 +161,7 @@ const JobDetails = () => {
                 </Grid>
             </Grid>
             <Grid container spacing={2} className="main-container">
-                {sampleJdData?.jdList && sampleJdData?.jdList?.map((item: SampleJD, index: number) => (
+                {filterJd && filterJd?.map((item: SampleJD, index: number) => (
                     <Grid item xs={12} sm={6} md={4} lg={3} key={index} mt={1}>
                         <MediaCard item={item} />
                     </Grid>
