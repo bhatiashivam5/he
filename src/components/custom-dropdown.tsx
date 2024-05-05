@@ -1,4 +1,5 @@
 import Select from "react-select";
+import { CustomDropdownProps, DropdownOptions } from "./";
 
 function CustomDropdown({
     options,
@@ -8,23 +9,25 @@ function CustomDropdown({
     placeholder,
     isLoading,
     onChange,
+    isClearable,
+    isSearchable,
     defaultValue,
-    className,
-    onBlur
+    className
 }: CustomDropdownProps) {
     return (
         <Select
-            // onChange={onChange}
-            onBlur={onBlur}
+            onChange={onChange}
             placeholder={placeholder}
             backspaceRemovesValue
-            value={defaultValue}
+            defaultValue={defaultValue}
             isLoading={isLoading}
             closeMenuOnSelect={closeMenuOnSelect}
             isMulti={isMulti}
             options={options}
             isDisabled={isDisabled}
             className=""
+            isClearable={isClearable}
+            isSearchable={isSearchable}
         />
     );
 }
